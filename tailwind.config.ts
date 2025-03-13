@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,6 +25,18 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				medical: {
+					50: '#e6f7ff',
+					100: '#b3e0ff',
+					200: '#80caff',
+					300: '#4db3ff',
+					400: '#1a9dff',
+					500: '#0086e6',
+					600: '#0069b3',
+					700: '#004d80',
+					800: '#00304d',
+					900: '#00141f',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -84,12 +97,59 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				pulse: {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' },
+				},
+				fadeIn: {
+					from: { opacity: '0', transform: 'translateY(10px)' },
+					to: { opacity: '1', transform: 'translateY(0)' },
+				},
+				slideInLeft: {
+					from: { opacity: '0', transform: 'translateX(-20px)' },
+					to: { opacity: '1', transform: 'translateX(0)' },
+				},
+				slideInRight: {
+					from: { opacity: '0', transform: 'translateX(20px)' },
+					to: { opacity: '1', transform: 'translateX(0)' },
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
+				},
+				heartbeat: {
+					'0%': { transform: 'scale(1)' },
+					'14%': { transform: 'scale(1.3)' },
+					'28%': { transform: 'scale(1)' },
+					'42%': { transform: 'scale(1.3)' },
+					'70%': { transform: 'scale(1)' },
+				},
+				ping: {
+					'75%, 100%': {
+						transform: 'scale(2)',
+						opacity: '0',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'fade-in': 'fadeIn 0.5s ease-out forwards',
+				'slide-in-left': 'slideInLeft 0.5s ease-out forwards',
+				'slide-in-right': 'slideInRight 0.5s ease-out forwards',
+				'float': 'float 3s ease-in-out infinite',
+				'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
+				'ping': 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
+			},
+			boxShadow: {
+				'glow': '0 0 15px rgba(0, 134, 230, 0.5)',
+				'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+			},
+			backdropFilter: {
+				'glass': 'blur(10px)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
