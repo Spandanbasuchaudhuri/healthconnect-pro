@@ -1,5 +1,5 @@
 
-import { MessageSquare, Video, Ambulance, Activity, Share2 } from "lucide-react";
+import { MessageSquare, Video, Ambulance, Activity, Share2, Shield } from "lucide-react";
 import FeatureCard from "./FeatureCard";
 import DoctorCall from "./DoctorCall";
 import EmergencyDispatch from "./EmergencyDispatch";
